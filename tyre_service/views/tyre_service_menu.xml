@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="tyre_service_root_menu" name="Tyre shop" sequence="1">
+        <!-- RETREADING -->
+        <menuitem id="tyre_service_retreading_menu" name="Retreading">
+            <menuitem id="tyre_retreading_appointment_menu" name="Appointments" action="tyre_retreading_appointment_action"/>
+        </menuitem>
+        <!-- BUYING -->
+        <menuitem id="tyre_service_buying_menu" name="Buying">
+            <menuitem id="tyre_buying_order_menu" name="Orders" action="tyre_buying_order_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

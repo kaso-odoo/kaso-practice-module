@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tyre_retreading_appointment,access_tyre_retreading_appointment,model_tyre_retreading_appointment,base.group_user,1,1,1,1
+access_tyre_buying_order,access_tyre_buying_order,model_tyre_buying_order,base.group_user,1,1,1,1

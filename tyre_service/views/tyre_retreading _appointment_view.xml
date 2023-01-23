@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- TREE VIEW -->
+    <record id="tyre_service_appointment_tree_view" model="ir.ui.view">
+        <field name="name">Tyre Retreading Appointment Tree View</field>
+        <field name="model">tyre.retreading.appointment</field>
+        <field name="arch" type="xml">
+            <tree string="tree_view">
+                <field name='name' optional='show'/>
+                <field name='address' optional='show'/>
+                <field name='contact_no' optional='show'/>
+                <field name='vehicle_type' optional='show'/>
+                <field name='postcode' optional='hide'/>
+            </tree>
+        </field>
+    </record>
+    <!-- FORM VIEW -->
+    <record id="tyre_service_appointment_form_view" model="ir.ui.view">
+        <field name="name">Tyre Retreading Appointment Form View</field>
+        <field name="model">tyre.retreading.appointment</field>
+        <field name="arch" type="xml">
+            <form string="form_view">
+                <sheet>
+                    <div class='oe_title'>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name='address'/>
+                            <field name='contact_no'/>
+                        </group>
+                        <group>
+                            <field name='postcode'/>
+                            <field name='date_availability'/>
+                        </group>
+                        <notebook>
+                            <page string='Tyre info'>
+                                <group>                  
+                                    <field name='vehicle_type'/>
+                                    <field name='tyre_brand'/>                  
+                                    <field name='section_width'/>                  
+                                    <field name='aspect_ratio'/>                  
+                                    <field name='rim_diameter'/>                  
+                                    <field name='speed_rating'/>
+                                </group>
+                            </page>
+                        </notebook>                  
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="tyre_retreading_appointment_action" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">tyre.retreading.appointment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

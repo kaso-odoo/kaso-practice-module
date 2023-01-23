@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- TREE VIEW -->
+    <record id="tyre_service_order_tree_view" model="ir.ui.view">
+        <field name="name">Tyre Buying Order Tree View</field>
+        <field name="model">tyre.buying.order</field>
+        <field name="arch" type="xml">
+            <tree string="tree_view">
+                <field name='name' optional='show'/>
+                <field name='address' optional='show'/>
+                <field name='contact_no' optional='show'/>
+                <field name='vehicle_type' optional='show'/>
+                <field name='postcode' optional='hide'/>
+            </tree>
+        </field>
+    </record>
+    <!-- FORM VIEW -->
+    <record id="tyre_service_order_form_view" model="ir.ui.view">
+        <field name="name">Tyre Buying Order Form View</field>
+        <field name="model">tyre.buying.order</field>
+        <field name="arch" type="xml">
+            <form string="form_view">
+                <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='address'/>
+                        <field name='contact_no'/>
+                        <field name='vehicle_type'/>
+                        <field name='postcode'/>                    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="tyre_buying_order_action" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">tyre.buying.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

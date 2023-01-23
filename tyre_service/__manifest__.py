@@ -11,4 +11,10 @@
     'installable': True,
     'application': True,
     'auto_install': False,
+    'data': [
+        'security/ir.model.access.csv',
+        'views/tyre_retreading _appointment_view.xml',
+        'views/tyre_buying_order_view.xml',
+        'views/tyre_service_menu.xml',
+    ],
 }
