@@ -15,7 +15,7 @@ class tyre_retreading_appointment(models.Model):
         ('car', 'Car'),
         ('tractor', 'Tractor'),
         ('truck', 'Truck'),], string='Vehicle Type',required=True)
-	tyre_brand = fields.Text(string='Tyre Brand')
+	tyre_brand = fields.Char(string='Tyre Brand')
 	section_width = fields.Integer(string='Section width (mm)')
 	aspect_ratio = fields.Integer(string='Aspect Ratio')
 	rim_diameter = fields.Integer(string='Rim Diameter (inch)')

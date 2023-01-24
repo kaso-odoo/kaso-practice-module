@@ -22,12 +22,31 @@
         <field name="arch" type="xml">
             <form string="form_view">
                 <sheet>
+                    <div class='oe_title'>
+                        <h1>
+                            <field name='name'/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name='name'/>
-                        <field name='address'/>
-                        <field name='contact_no'/>
-                        <field name='vehicle_type'/>
-                        <field name='postcode'/>                    
+                        <group>
+                            <field name='address'/>      
+                        </group>
+                        <group>
+                            <field name='contact_no'/>
+                            <field name='postcode'/>                    
+                        </group>
+                        <notebook>
+                            <page string='tyre info'>
+                                <group>
+                                    <field name='vehicle_type'/>
+                                    <field name='tyre_brand'/>
+                                    <field name='section_width'/>
+                                    <field name='aspect_ratio'/>
+                                    <field name='rim_diameter'/>
+                                    <field name='speed_rating'/>
+                                </group>
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>
