@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields
+from odoo import models, fields,api
 
 class tyre_buying_order(models.Model):
 	_name = 'tyre.buying.order'
@@ -23,8 +23,13 @@ class tyre_buying_order(models.Model):
 	# create_order_ids = fields.One2many(comodel='create.order','customer_id')
 	# price = fields.
 	# tyre_sizes = Many2one
+	price = fields.Integer(string='Price',compute='_compute_price',store=True)
 
-
+	@api.depends('section_width','aspect_ratio','rim_diameter')
+	def _compute_price(self):
+		for record in self:
+			record.price = ((record.section_width*record.aspect_ratio*record.rim_diameter)/100)*2
+		return True
 
 
 	

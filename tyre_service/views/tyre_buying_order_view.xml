@@ -44,6 +44,7 @@
                                     <field name='aspect_ratio'/>
                                     <field name='rim_diameter'/>
                                     <field name='speed_rating'/>
+                                    <field name='price'/>
                                 </group>
                             </page>
                         </notebook>
