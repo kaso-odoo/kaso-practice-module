@@ -30,7 +30,7 @@
                     <group>
                         <group>
                             <field name='address'/>
-                            <field name='contact_no'/>
+                            <field name='contact_no' options='{"type": "number"}'/>
                         </group>
                         <group>
                             <field name='postcode'/>
