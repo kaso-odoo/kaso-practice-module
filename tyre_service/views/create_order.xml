@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- TREE VIEW -->
+    <record id="create_order_tree_view" model="ir.ui.view">
+        <field name="name">Create Order Tree View</field>
+        <field name="model">create.order</field>
+        <field name="arch" type="xml">
+            <tree string="tree_view">
+                <field name='vehicle_type' optional='show'/>
+                <field name='tyre_brand' optional='show'/>
+                <field name='section_width' optional='show'/>
+                <field name='aspect_ratio' optional='hide'/>
+                <field name='rim_diameter' optional='show'/>
+                <field name='price' optional='show'/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="create_order_form_view" model="ir.ui.view">
+        <field name="name">Create Order Form View</field>
+        <field name="model">create.order</field>
+        <field name="arch" type="xml">
+            <form string="form_view">
+                <sheet>
+                    <group>                   
+                        <group>
+                            <!-- <field name='create_order_ids'/> -->
+                            <field name='vehicle_type'/>
+                            <field name='tyre_brand'/>
+                            <field name='section_width'/>
+                            <field name='aspect_ratio'/>
+                            <field name='rim_diameter'/>
+                            <field name='speed_rating'/>
+                            <field name='quantity'/>
+                            <field name='price'/>
+                        </group>                    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- <record id="create_order_action" model="ir.actions.act_window">
+        <field name="name">create orders</field>
+        <field name="res_model">create.order</field>
+        <field name="view_mode">tree,form</field>
+    </record> -->
+</odoo>

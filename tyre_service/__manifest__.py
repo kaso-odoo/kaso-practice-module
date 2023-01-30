@@ -16,5 +16,6 @@
         'views/tyre_retreading _appointment_view.xml',
         'views/tyre_buying_order_view.xml',
         'views/tyre_service_menu.xml',
+        'views/create_order.xml',
     ],
 }

@@ -10,7 +10,7 @@
                 <field name='name' optional='show'/>
                 <field name='address' optional='show'/>
                 <field name='contact_no' optional='show'/>
-                <field name='vehicle_type' optional='show'/>
+                <!-- <field name='vehicle_type' optional='show'/> -->
                 <field name='postcode' optional='hide'/>
             </tree>
         </field>
@@ -29,23 +29,15 @@
                     </div>
                     <group>
                         <group>
-                            <field name='address'/>      
+                            <field name='address'/>
                         </group>
                         <group>
                             <field name='contact_no'/>
-                            <field name='postcode'/>                    
+                            <field name='postcode'/>
                         </group>
                         <notebook>
-                            <page string='tyre info'>
-                                <group>
-                                    <field name='vehicle_type'/>
-                                    <field name='tyre_brand'/>
-                                    <field name='section_width'/>
-                                    <field name='aspect_ratio'/>
-                                    <field name='rim_diameter'/>
-                                    <field name='speed_rating'/>
-                                    <field name='price'/>
-                                </group>
+                            <page string='create order'>
+                                <field name='create_order_ids'/>
                             </page>
                         </notebook>
                     </group>
