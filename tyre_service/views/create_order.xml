@@ -28,7 +28,10 @@
                         <group>
                             <!-- <field name='create_order_ids'/> -->
                             <field name='vehicle_type'/>
-                            <field name='tyre_brand'/>
+                            <field name='tyre_brandb'/>
+                            <field name='tyre_brandc'/>
+                            <field name='tyre_brandtr'/>
+                            <field name='tyre_brandt'/>
                             <field name='section_width'/>
                             <field name='aspect_ratio'/>
                             <field name='rim_diameter'/>
