@@ -8,8 +8,8 @@
         <field name="arch" type="xml">
             <tree string="tree_view">
                 <field name='vehicle_type' optional='show'/>
-                <field name='tyre_brand' optional='show'/>
-                <field name='section_width' optional='show'/>
+                <!-- <field name='tyre_brand' optional='show'/> -->
+                <!-- <field name='section_width' optional='show'/> -->
                 <field name='aspect_ratio' optional='hide'/>
                 <field name='rim_diameter' optional='show'/>
                 <field name='price' optional='show'/>
@@ -24,21 +24,22 @@
         <field name="arch" type="xml">
             <form string="form_view">
                 <sheet>
-                    <group>                   
+                    <group>
                         <group>
                             <!-- <field name='create_order_ids'/> -->
                             <field name='vehicle_type'/>
-                            <field name='tyre_brandb'/>
-                            <field name='tyre_brandc'/>
-                            <field name='tyre_brandtr'/>
-                            <field name='tyre_brandt'/>
-                            <field name='section_width'/>
+                            <field name='tyre_type'/>
+                            <field name='tyre_brandb' attrs="{'invisible': [('vehicle_type', '!=', 'bike')]}"/>
+                            <field name='tyre_brandc' attrs="{'invisible': [('vehicle_type', '!=', 'car')]}"/>
+                            <field name='tyre_brandtr' attrs="{'invisible': [('vehicle_type', '!=', 'truck')]}"/>
+                            <field name='tyre_brandt' attrs="{'invisible': [('vehicle_type', '!=', 'tractor')]}"/>
+                            <field name='section_widthb'/>
                             <field name='aspect_ratio'/>
                             <field name='rim_diameter'/>
                             <field name='speed_rating'/>
                             <field name='quantity'/>
                             <field name='price'/>
-                        </group>                    
+                        </group>
                     </group>
                 </sheet>
             </form>

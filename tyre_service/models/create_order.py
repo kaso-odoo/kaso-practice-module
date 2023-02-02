@@ -21,7 +21,18 @@ class create_order(models.Model):
     tyre_brandt = fields.Selection([
         ('jktyre','JKtyre'),('bkt','BKT')],string='Tyre BrandT')
     
-    section_width = fields.Integer(string='Section width(mm)', required=True)
+    section_widthb = fields.Selection([
+        ('70','70'),('80','80'),('90','90'),('100','100'),('110','110')],string='Section width(mm)',required=True)
+    # section_widthc = fields.Selection([
+    #     ('70','70'),('80','80'),('90','90'),('100','100'),('110','110')],string='Section width(mm)',required=True)
+    # section_widthtr = fields.Selection([
+    #     ('70','70'),('80','80'),('90','90'),('100','100'),('110','110')],string='Section width(mm)',required=True)
+    # section_widtht = fields.Selection([
+    #     ('70','70'),('80','80'),('90','90'),('100','100'),('110','110')],string='Section width(mm)',required=True)
+    # section_widthc = fields.Selection(string='Section width(mm)', required=True)
+    # section_widthtr = fields.Selection(string='Section width(mm)', required=True)
+    # section_widtht = fields.Selection(string='Section width(mm)', required=True)
+    
     aspect_ratio = fields.Integer(string='Aspect Ratio', required=True)
     rim_diameter = fields.Integer(string='Rim Diameter(inch)', required=True)
     speed_rating = fields.Char(string='Speed Rating')
@@ -32,21 +43,20 @@ class create_order(models.Model):
     customer_id = fields.Many2one('tyre.buying.order', required=True)
     quantity = fields.Integer(string='Quantity')
 
-    @api.depends('section_width', 'aspect_ratio', 'rim_diameter', 'quantity')
+    @api.depends('section_widthb', 'aspect_ratio', 'rim_diameter', 'quantity')
     def _compute_price(self):
         for record in self:
-            record.price = (
-                ((record.section_width*record.aspect_ratio*record.rim_diameter)/100)*2)*record.quantity
-        return True
+            if record.vehicle_type == 'bike':
+                record.price = (
+                    ((int(record.section_widthb)*record.aspect_ratio*record.rim_diameter)/100)*2)*record.quantity
+            # elif record.vehicle_type == 'bike':
+            #     record.price = (
+            #         ((int(record.section_widthb)*record.aspect_ratio*record.rim_diameter)/100)*2)*record.quantity
+            # elif record.vehicle_type == 'bike':
+            #     record.price = (
+            #         ((int(record.section_widthb)*record.aspect_ratio*record.rim_diameter)/100)*2)*record.quantity
+            # elif record.vehicle_type == 'bike':
+            #     record.price = (
+            #         ((int(record.section_widthb)*record.aspect_ratio*record.rim_diameter)/100)*2)*record.quantity
+            return True
 
-    @api.depends('vehicle_type')
-    def _compute_tyre_brand(self):
-        for record in self:
-            if self.vehicle_type == 'Bike':
-                self.tyre_brand = [('tvs', 'TVS'),('ralco','Ralco'),('ceat', 'Ceat')]
-            elif self.vehicle_type == 'Car':
-                self.tyre_brand = [('ceat', 'Ceat'),('apollo','Apollo'),('michelin','Michelin')]
-            elif self.vehicle_type == 'Truck':
-                self.tyre_brand = [('mrf','MRF'),('apollo','Apollo'),('jktyre', 'JKtyre')]
-            elif self.vehicle_type == 'Tractor':
-                self.tyre_brand = [('bkt', 'BKT'),('mrf','MRF')]
