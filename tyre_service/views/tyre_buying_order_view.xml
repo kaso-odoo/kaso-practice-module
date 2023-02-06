@@ -32,7 +32,7 @@
                             <field name='address'/>
                         </group>
                         <group>
-                            <field name='contact_no'/>
+                            <field name='contact_no'  widget="phone" string="contact_no"/>
                             <field name='postcode'/>
                         </group>
                         <notebook>
