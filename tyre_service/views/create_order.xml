@@ -29,11 +29,14 @@
                             <!-- <field name='create_order_ids'/> -->
                             <field name='vehicle_type'/>
                             <field name='tyre_type'/>
-                            <field name='tyre_brandb' attrs="{'invisible': [('vehicle_type', '!=', 'bike')]}"/>
+                            <field name='tyre_brandb' attrs="{'invisible': [('vehicle_type', '!=', 'bike')]}"  options="{'no_create': True, 'no_edit_color': True}"/>
                             <field name='tyre_brandc' attrs="{'invisible': [('vehicle_type', '!=', 'car')]}"/>
                             <field name='tyre_brandtr' attrs="{'invisible': [('vehicle_type', '!=', 'truck')]}"/>
                             <field name='tyre_brandt' attrs="{'invisible': [('vehicle_type', '!=', 'tractor')]}"/>
-                            <field name='section_widthb'/>
+                            <field name='section_widthb' attrs="{'invisible': [('vehicle_type', '!=', 'bike')]}"/>
+                            <field name='section_widthc' attrs="{'invisible': [('vehicle_type', '!=', 'car')]}"/>
+                            <field name='section_widthtr' attrs="{'invisible': [('vehicle_type', '!=', 'truck')]}"/>
+                            <field name='section_widtht' attrs="{'invisible': [('vehicle_type', '!=', 'tractor')]}"/>
                             <field name='aspect_ratio'/>
                             <field name='rim_diameter'/>
                             <field name='speed_rating'/>

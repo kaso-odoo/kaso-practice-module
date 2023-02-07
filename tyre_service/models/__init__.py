@@ -2,3 +2,4 @@
 from . import tyre_buying_order
 from . import tyre_retreading_appointment
 from . import create_order
+from . import tyre_section_width
